@@ -1,0 +1,408 @@
+﻿@model List<Event>
+
+@if(User.IsInRole(nameof(Role.UserRole.Admin))){
+<a class="btn btn-primary mb-4" asp-action="Create" asp-controller="Event">Create Event</a>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th colspan="2" class="table-light">#ID</th>
+            <th colspan="2" class="table-light">Name</th>
+            <th colspan="2" class="table-light">Description</th>
+            <th colspan="2" class="table-light">Date</th>
+            <th colspan="2" class="table-light">Venue</th>
+            <th colspan="2" class="table-light">Creation time</th>
+            <th colspan="2" class="table-light">Updated time</th>
+            <th colspan="2" class="table-light">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td colspan="2" class="table-active">@item.ID</td>
+                <td colspan="2" class="table-active">@item.Name</td>
+                <td colspan="2" class="table-active">@item.Description</td>
+                <td colspan="2" class="table-active">@item.Date</td>
+                <td colspan="2" class="table-active">@item.Venue.Name</td>
+                <td colspan="2" class="table-active">@item.CreatedAt</td>
+                <td colspan="2" class="table-active">@item.UpdatedAt</td>
+                <td>
+                    <a class="btn btn-dark" asp-controller="Event" asp-action="Update" asp-route-id="@item.ID">Edit</a>
+                    <a class="btn btn-dark" asp-controller="Event" asp-action="Remove" asp-route-id="@item.ID">Remove</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+    </table>
+}
+else
+{
+    <style>
+      
+
+        /* Match Card */
+        .custom-match-card {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1400px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+           @*  /* Add transition for smooth scaling */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; *@
+        }
+
+           @*  /* Hover effect: enlarge the card */
+            .custom-match-card:hover {
+                transform: scale(1.05); /* Makes the card 5% bigger */
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Adds larger shadow when hovering */
+            } *@
+        /* Team Info */
+        .custom-team-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .custom-team-logo {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+            .custom-team-logo img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+            }
+
+            .custom-team-logo span {
+                font-weight: bold;
+            }
+
+        /* Match Details: use Flexbox to lay out the stadium and calendar info in separate blocks */
+        .custom-match-details {
+            display: flex;
+            justify-content: space-between; /* Ensures equal space between elements */
+            align-items: center;
+            gap: 20px; /* Optional: Adds spacing between each detail block */
+        }
+
+        /* Stadium Information */
+        .custom-stadium-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-stadium-icon {
+            width: 32px; /* Increase the width */
+            height: 32px; /* Increase the height */
+            background: url('../assets/event/stadium (2).png') no-repeat center;
+            background-size: contain; /* Ensure the icon scales correctly */
+            display: inline-block;
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        /* Date Information */
+        .custom-date-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .custom-date-icon {
+            width: 32px; /* Increase the width */
+            height: 32px; /* Increase the height */
+            background: url('../assets/event/calendar.png') no-repeat center;
+            background-size: contain; /* Ensure the icon scales correctly */
+            display: inline-block;
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+
+        /* Match Number */
+        .custom-match-no {
+            font-weight: bold;
+        }
+
+
+        /* Booking Status */
+        .custom-booking-status {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .custom-booking-closed {
+            background-color: #ccc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: not-allowed;
+        }
+
+        .custom-booking-note {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .custom-status-icon {
+            width: 10px;
+            height: 10px;
+            background-color: red;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        /* View More Button */
+        .custom-view-more {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+            .custom-view-more button {
+                background-color: #ccc;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+        /* Horizontal Hero Card */
+        .horizontal-hero-card {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            height: 400px; /* Adjust height as needed */
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #f0f0f0; /* Fallback color */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* Add transition for smooth scaling */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+            /* Hover effect: enlarge card slightly */
+            .horizontal-hero-card:hover {
+                transform: scale(1.05); /* Makes the card 5% bigger */
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+            }
+
+        /* Image Section */
+        .horizontal-hero-image {
+            flex: 2;
+            height: 100%;
+        }
+
+            .horizontal-hero-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        /* Content Section */
+        .horizontal-hero-content {
+            flex: 1.5;
+            padding: 40px;
+            background-color: #fff; /* White background */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+            .horizontal-hero-content h1 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+            }
+
+            .horizontal-hero-content p, .horizontal-hero-content a {
+                margin: 10px 0;
+            }
+
+        button {
+            background-color: green;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .new-line span {
+            display: block;
+        }
+    </style>
+    <div class="container">
+        @if(Model.Count() == 0)
+        {
+            <div class="col-md-3">
+                <h5 class="text-black"> No Event is found . </h5>
+            </div>
+        }
+
+        @foreach (var item in Model)
+        {
+            if(item.Type==Booking_Tickets.Helper.Type.EventType.Sports)
+            {
+                <div class="custom-match-card">
+                    <div class="custom-team-info">
+                        <div class="custom-team-logo">
+                            <img src="~/assets/event/stadium.png" alt="Egypt Logo">
+                            <span>@item.Team1</span>
+                        </div>
+                        <span>vs</span>
+                        <div class="custom-team-logo">
+                            <img src="~/assets/event/stadium (2).png" alt="Cape Verde Logo">
+                            <span>@item.Team2</span>
+                        </div>
+                    </div>
+
+                    <div class="custom-match-details">
+                        <div class="custom-stadium-info">
+                            <i class="custom-stadium-icon"></i>
+                            <span>@item.Venue.Name</span>
+                        </div>
+                        <div class="custom-date-info">
+                            <i class="custom-date-icon"></i>
+                            <div class="new-line">
+                                <span>@item.Date.ToString("ddd dd MMM yyyy")</span>
+                                <span>@item.Date.ToString("hh:mm tt")</span>
+                            </div>
+                        </div>
+                      
+                    </div>
+
+                    @if (item.IsExpired)
+                    {
+                        <div class="custom-booking-status">
+                            <a class="custom-booking-closed">Booking Closed</a>
+                            <span class="custom-booking-note">
+                                <i class="custom-status-icon"></i> Booking Closed
+                            </span>
+                        </div>
+                    }
+                    else
+                    {
+                        <!-- Trigger Button -->
+                        <div class="custom-booking-status">
+                            <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eventDetailsModal">Booking Tickets</a>
+                        </div>
+
+                          <!-- Modal -->
+          <div class="modal fade" id="eventDetailsModal" tabindex="-1" aria-labelledby="eventDetailsLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="eventDetailsLabel">@item.Name</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body text-center">
+                          <!-- Team Logos -->
+                          <div class="row">
+                              <div class="col">
+                                  <img src="@item.TeamImage1" alt="Team 1" class="img-fluid mb-3" style="width: 100px; height: 100px;">
+                                  <h6>@item.Team1</h6>
+                              </div>
+                              <div class="col">
+                                  <img src="@item.TeamImage2" alt="Team 2" class="img-fluid mb-3" style="width: 100px; height: 100px;">
+                                  <h6>@item.Team2</h6>
+                              </div>
+                          </div>
+
+                          <!-- Stadium and Event Date Information -->
+                          <h6><strong>Stadium:</strong> @item.Venue.Name</h6>
+                          <h6><strong>Date:</strong> @item.Date.ToString("MMMM dd, yyyy")</h6>
+                          @* <h6><strong>Time:</strong> @item.Time.ToString("hh:mm tt")</h6> *@
+
+                          <!-- Ticket Price and Types -->
+                          <form method="post" action="/Cart/AddToCart">
+                              <input type="hidden" name="EventId" value="@item.ID" />
+
+                              <div class="row mt-4">
+                                  <div class="col">
+                                      <label for="thirdClassQty">Third Class - Right Side</label>
+                                      <select class="form-control" name="ThirdClassQty" id="thirdClassQty">
+                                          <option value="0">0</option>
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                      </select>
+                                      <p>Price: EGP200.00</p>
+                                  </div>
+                                  <div class="col">
+                                      <label for="firstClassQty">First Class - Right Side</label>
+                                      <select class="form-control" name="FirstClassQty" id="firstClassQty">
+                                          <option value="0">0</option>
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                      </select>
+                                      <p>Price: EGP2000.00</p>
+                                  </div>
+                                  <div class="col">
+                                      <label for="exclusiveBoxQty">Exclusive Box</label>
+                                      <select class="form-control" name="ExclusiveBoxQty" id="exclusiveBoxQty">
+                                          <option value="0">0</option>
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                      </select>
+                                      <p>Price: EGP5000.00</p>
+                                  </div>
+                              </div>
+
+                              <div class="modal-footer">
+                                  <button type="submit" class="btn btn-primary">Add to Cart</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              </div>
+                          </form>
+                      </div>
+                    
+                  </div>
+              </div>
+          </div>
+          }
+                </div>
+
+                <div class="custom-view-more">
+                    <button>View More</button>
+                </div>
+
+            }
+            else
+            {
+                <div class="horizontal-hero-card">
+                    <div class="horizontal-hero-image">
+                        <img src="~/assets/event/2.jpeg" alt="Event Image">
+                    </div>
+                    <div class="horizontal-hero-content">
+                        <h1>@item.Name</h1>
+                       
+                        <a href="#">@item.Venue.Address</a>
+                         <p>Date: @item.Date.ToString("ddd dd MMM yyyy") @item.Date.ToString("hh:mm tt")</p>
+                         
+                        <p>Prices From: 250 EGP</p>
+                        <button>Buy Tickets</button>
+                    </div>
+                </div>
+
+            }
+        }
+     
+    </div>
+}
+

@@ -1,0 +1,115 @@
+﻿@model EventModelView
+
+<form method="post" asp-action="Create" asp-controller="Event">
+    <div asp-validation-summary="All" class="text-danger mb-2"></div>
+
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input class="form-control" asp-for="Description">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Type">Type</label>
+        <select id="eventTypeSelect" class="form-control" asp-for="Type" asp-items="Html.GetEnumSelectList<Booking_Tickets.Helper.Type.EventType>()" onchange="toggleFields()">
+            <option value="">-- Select Event Type --</option>
+        </select>
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+
+    <div id="EventImageField" class="form-group">
+        <label asp-for="EventImage">EventImage</label>
+        <input class="form-control" asp-for="EventImage">
+        <span asp-validation-for="Team1" class="text-danger"></span>
+    </div>
+    <div id="team1Field" class="form-group">
+        <label asp-for="Team1">Team1</label>
+        <input class="form-control" asp-for="Team1">
+        <span asp-validation-for="Team1" class="text-danger"></span>
+    </div>
+    <div id="teamImage1Field" class="form-group">
+        <label asp-for="TeamImage1">TeamImage1</label>
+        <input class="form-control" asp-for="TeamImage1">
+        <span asp-validation-for="TeamImage1" class="text-danger"></span>
+    </div>
+    <div id="team2Field" class="form-group">
+        <label asp-for="Team2">Team2</label>
+        <input class="form-control" asp-for="Team2">
+        <span asp-validation-for="Team2" class="text-danger"></span>
+    </div>
+    <div id="teamImage2Field" class="form-group">
+        <label asp-for="TeamImage2">TeamImage2</label>
+        <input  class="form-control" asp-for="TeamImage2">
+        <span asp-validation-for="TeamImage2" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Date">Date</label>
+        <input type="datetime-local" class="form-control" asp-for="Date">
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="VenueID">Select Venue</label>
+        <select asp-for="VenueID" class="form-control">
+            <option value="">-- Select Venue --</option>
+            @foreach (var venue in ViewBag.Venues)
+            {
+                <option value="@venue.Value">@venue.Text</option>
+            }
+        </select>
+        <span asp-validation-for="VenueID" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</form>
+
+<script>
+    function toggleFields() {
+        var eventTypeSelect = document.getElementById('eventTypeSelect');
+        var eventType = eventTypeSelect.value;
+
+        // Get fields by their respective IDs
+       // var descriptionField = document.getElementById('descriptionInput');
+        var eventImageField = document.getElementById('EventImageField');
+        var team1Field = document.getElementById('team1Field');
+        var teamImage1Field = document.getElementById('teamImage1Field');
+        var team2Field = document.getElementById('team2Field');
+        var teamImage2Field = document.getElementById('teamImage2Field');
+
+        // If the event type is 'match' (assuming '0' is the value for 'match')
+        if (eventType === "0") 
+        {
+            // Show all team-related fields and hide the description
+            eventImageField.style.display = "none";
+            team1Field.style.display = "block";
+            teamImage1Field.style.display = "block";
+            team2Field.style.display = "block";
+            teamImage2Field.style.display = "block";
+        } 
+        else 
+        {
+            // Hide all team-related fields and show the description
+            eventImageField.style.display = "block";
+            team1Field.style.display = "none";
+            teamImage1Field.style.display = "none";
+            team2Field.style.display = "none";
+            teamImage2Field.style.display = "none";
+        }
+    }
+
+    // Initialize the form on page load
+    document.addEventListener("DOMContentLoaded", function () {
+        toggleFields(); // To ensure the correct fields are displayed/hidden when the page loads
+    });
+</script>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

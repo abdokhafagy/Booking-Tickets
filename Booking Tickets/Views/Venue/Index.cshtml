@@ -1,0 +1,38 @@
+﻿@model List<Venue>
+
+<a class="btn btn-primary mb-4" asp-action="Create" asp-controller="Venue">Create Venue</a>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th colspan="2" class="table-light">#ID</th>
+            <th colspan="2" class="table-light">Name</th>
+            <th colspan="2" class="table-light">Address</th>
+            <th colspan="2" class="table-light">Capacity</th>
+            <th colspan="2" class="table-light">Creation time</th>
+            <th colspan="2" class="table-light">Updated time</th>
+            <th colspan="2" class="table-light">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+      @foreach (var item in Model)
+        {
+            <tr>
+                <td colspan="2" class="table-active">@item.ID</td>
+                <td colspan="2" class="table-active">@item.Name</td>
+                <td colspan="2" class="table-active">@item.Address</td>
+                <td colspan="2" class="table-active">@item.Capacity</td>
+                <td colspan="2" class="table-active">@item.CreatedAt</td>
+                <td colspan="2" class="table-active">@item.UpdatedAt</td>
+                <td>
+                    <a class="btn btn-dark" asp-controller="Venue" asp-action="Update" asp-route-id="@item.ID">Edit</a>
+                    <a class="btn btn-dark" asp-controller="Venue" asp-action="Remove" asp-route-id="@item.ID">Remove</a>
+                </td>
+                
+            </tr>
+        }
+       
+    </tbody>
+</table>
+
+      

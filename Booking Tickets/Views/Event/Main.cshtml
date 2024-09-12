@@ -1,0 +1,62 @@
+﻿@model List<IGrouping<Booking_Tickets.Helper.Type.EventType, Booking_Tickets.Data.Entites.Event>>
+@{
+    Layout = "_MainLayout";
+}
+<!-- Partial view rendering -->
+<partial name="_CardPartialView" /> 
+
+@if (User.IsInRole(nameof(Role.UserRole.Admin)))
+{
+    <div class="text-center">
+        <a class="btn btn-primary mb-4" asp-action="Create" asp-controller="Event">Create Event</a>
+    </div>
+}
+
+
+
+<div class="container-fluid services py-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+   @for (int i = 0; i < Model.Count; i++)
+{
+    var category = Model[i];  // Grouped by EventType
+    @if (i % 3 == 0 && i != 0)
+    {
+        @:</div><div class="row justify-content-center">
+    }
+
+    @for (int j = 0; j < category.Count(); j++)
+    {
+        var eventItem = category.ElementAt(j);
+
+        <div class="col-md-6 col-lg-4 custom-card">
+            <div class="services-item bg-light">
+                <div class="p-4 text-center services-content">
+                    <div class="services-content-icon">
+                        
+                       @if (eventItem.Type == Booking_Tickets.Helper.Type.EventType.Sports)
+                          {
+                              <img src="~/assets/event/stadium.png" class="img-fluid" />
+                              <h4 class="mb-3">@eventItem.Type</h4>
+                                <div class="d-flex justify-content-center">
+                       <a href="@Url.Action("Index", "Event", new { type = eventItem.Type.ToString()})" class="btn btn-secondary text-white small-btn">Show</a>                                </div>
+                          }
+                          else
+                          {
+                              <img src="~/assets/event/entertainment.png" class="img-fluid" />
+                             <h4 class="mb-3">@eventItem.Type</h4>
+                            <div class="d-flex justify-content-center">
+                              <a href="@Url.Action("Index", "Event", new { type = eventItem.Type.ToString() })" class="btn btn-secondary text-white small-btn">Show</a>                            </div>
+                          } 
+                               
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+        </div>
+    </div>
+</div>
+  

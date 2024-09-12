@@ -1,0 +1,55 @@
+﻿@model CartDetailViewModel
+
+<div class="container">
+    <!-- Event and Venue Information -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h3>@Model.Event.Name</h3>
+            <h6>@Model.Venue.Name</h6>
+            <p>Date: @Model.Event.Date.ToString("MMMM dd, yyyy")</p>
+        </div>
+    </div>
+
+    <!-- Teams' Logos -->
+    <div class="row text-center my-3">
+        <div class="col-md-6">
+            @* <img src="@Model.Event.Team1Logo" alt="Team 1" class="img-fluid" style="width: 100px; height: 100px;"> *@
+            <h6>@Model.Event.Team1</h6>
+        </div>
+        <div class="col-md-6">
+            @* <img src="@Model.Event.Team2Logo" alt="Team 2" class="img-fluid" style="width: 100px; height: 100px;"> *@
+            <h6>@Model.Event.Team2</h6>
+        </div>
+    </div>
+
+    <!-- Ticket Selection -->
+    <div class="row mt-4">
+        <!-- Ticket Options -->
+        @foreach (var ticket in Model.Tickets)
+        {
+            <div class="col-md-4">
+                <label>@ticket.TicketType</label>
+                <select class="form-control" name="ticketQty-@ticket.ID" id="ticketQty-@ticket.ID">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <p>Price: EGP@ticket.Price.ToString("F2")</p>
+            </div>
+        }
+    </div>
+
+    <!-- Total and Checkout -->
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h5>Total Amount: EGP@Model.Cart.TotalAmount.ToString("F2")</h5>
+        </div>
+        <div class="col-md-6 text-right">
+            <form method="post" action="/Cart/AddToCart">
+                <!-- Assuming you will handle the selected quantities in the controller -->
+                <button type="submit" class="btn btn-primary">Add to Cart</button>
+            </form>
+        </div>
+    </div>
+</div>

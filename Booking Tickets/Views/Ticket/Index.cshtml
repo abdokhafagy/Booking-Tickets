@@ -1,0 +1,40 @@
+﻿@model List<Ticket>
+
+@if (User.IsInRole(nameof(Role.UserRole.Admin)))
+{
+    <a class="btn btn-primary mb-4" asp-action="Create" asp-controller="Ticket">Create Ticket</a>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th colspan="2" class="table-light">#ID</th>
+                <th colspan="2" class="table-light">TicketType</th>
+                <th colspan="2" class="table-light">Price</th>
+                <th colspan="2" class="table-light">AvailableQuantity</th>
+                <th colspan="2" class="table-light">Event</th>
+                <th colspan="2" class="table-light">Creation time</th>
+                <th colspan="2" class="table-light">Updated time</th>
+                <th colspan="2" class="table-light">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td colspan="2" class="table-active">@item.ID</td>
+                    <td colspan="2" class="table-active">@item.TicketType</td>
+                    <td colspan="2" class="table-active">@item.Price</td>
+                    <td colspan="2" class="table-active">@item.AvailableQuantity</td>
+                    <td colspan="2" class="table-active">@item.Event.Name</td>
+                    <td colspan="2" class="table-active">@item.CreatedAt</td>
+                    <td colspan="2" class="table-active">@item.UpdatedAt</td>
+
+                    <td>
+                        <a class="btn btn-dark" asp-controller="Ticket" asp-action="Update" asp-route-id="@item.ID">Edit</a>
+                        <a class="btn btn-dark" asp-controller="Ticket" asp-action="Remove" asp-route-id="@item.ID">Remove</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}

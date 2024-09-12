@@ -1,0 +1,30 @@
+﻿@model Venue
+
+<form method="post" asp-action="Update" asp-controller="Venue" asp-route-id="@Model.ID">
+    <div asp-validation-summary="All" class="text-danger mb-2">
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="Name">Name</label>
+        <input class="form-control" asp-for="Name" value="@Model.Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="Address">Address</label>
+        <input class="form-control" asp-for="Address" value="@Model.Address">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="mb-3 row">
+        <label asp-for="Capacity">Capacity</label>
+        <input class="form-control" asp-for="Capacity" value="@Model.Capacity">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Submit</button>
+</form>
+
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
