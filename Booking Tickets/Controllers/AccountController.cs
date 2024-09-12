@@ -85,7 +85,8 @@ namespace Booking_Tickets.Controllers
             var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var princiable = new ClaimsPrincipal(identity);
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, princiable);
-            return RedirectToAction("Index", "Home");
+           
+            return RedirectToAction("Main", "Event");
         }
     }
 }

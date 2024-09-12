@@ -7,16 +7,15 @@
       "RelativeMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|solutionrelative:booking tickets\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|d:\\projects\\booking tickets\\booking tickets\\wwwroot\\css\\loginstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|solutionrelative:booking tickets\\wwwroot\\css\\loginstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|d:\\projects\\booking tickets\\booking tickets\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|solutionrelative:booking tickets\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|d:\\projects\\booking tickets\\booking tickets\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|solutionrelative:booking tickets\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./Tickets/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|d:\\projects\\booking tickets\\booking tickets\\views\\shared\\_loginregisterpartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|solutionrelative:booking tickets\\views\\shared\\_loginregisterpartialview.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|d:\\projects\\booking tickets\\booking tickets\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|solutionrelative:booking tickets\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A073F005-CD68-4B9E-AE60-A7D1C1302536}|Booking Tickets\\Booking Tickets.csproj|d:\\projects\\booking tickets\\booking tickets\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,41 +33,38 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "loginstyle.css",
-              "DocumentMoniker": "D:\\Projects\\Booking Tickets\\Booking Tickets\\wwwroot\\css\\loginstyle.css",
-              "RelativeDocumentMoniker": "Booking Tickets\\wwwroot\\css\\loginstyle.css",
-              "ToolTip": "D:\\Projects\\Booking Tickets\\Booking Tickets\\wwwroot\\css\\loginstyle.css",
-              "RelativeToolTip": "Booking Tickets\\wwwroot\\css\\loginstyle.css",
-              "ViewState": "AgIAAMEAAAAAAAAAAAAswMoAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-12T13:47:03.427Z",
+              "DocumentIndex": 3,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\Projects\\Booking Tickets\\Booking Tickets\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Booking Tickets\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\Projects\\Booking Tickets\\Booking Tickets\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Booking Tickets\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA5wD4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T20:31:33.657Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Projects\\Booking Tickets\\Booking Tickets\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Booking Tickets\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Projects\\Booking Tickets\\Booking Tickets\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Booking Tickets\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADAAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-12T13:46:21.943Z",
+              "Title": "dbo.Users [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./Tickets/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "dbo.Users [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-09-12T20:28:29.487Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_LoginRegisterPartialView.cshtml",
-              "DocumentMoniker": "D:\\Projects\\Booking Tickets\\Booking Tickets\\Views\\Shared\\_LoginRegisterPartialView.cshtml",
-              "RelativeDocumentMoniker": "Booking Tickets\\Views\\Shared\\_LoginRegisterPartialView.cshtml",
-              "ToolTip": "D:\\Projects\\Booking Tickets\\Booking Tickets\\Views\\Shared\\_LoginRegisterPartialView.cshtml",
-              "RelativeToolTip": "Booking Tickets\\Views\\Shared\\_LoginRegisterPartialView.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\Projects\\Booking Tickets\\Booking Tickets\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Booking Tickets\\Views\\Account\\Register.cshtml",
+              "ToolTip": "D:\\Projects\\Booking Tickets\\Booking Tickets\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Booking Tickets\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACwAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-12T13:40:34.05Z",
+              "WhenOpened": "2024-09-12T19:54:55.588Z",
               "EditorCaption": ""
             },
             {
@@ -79,7 +75,7 @@
               "RelativeDocumentMoniker": "Booking Tickets\\Views\\Account\\Login.cshtml",
               "ToolTip": "D:\\Projects\\Booking Tickets\\Booking Tickets\\Views\\Account\\Login.cshtml",
               "RelativeToolTip": "Booking Tickets\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABYAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAADwvxYAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-12T13:31:33.717Z",
               "EditorCaption": ""
@@ -92,7 +88,7 @@
               "RelativeDocumentMoniker": "Booking Tickets\\Controllers\\CartController.cs",
               "ToolTip": "D:\\Projects\\Booking Tickets\\Booking Tickets\\Controllers\\CartController.cs",
               "RelativeToolTip": "Booking Tickets\\Controllers\\CartController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBUAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-12T12:40:22.179Z",
               "EditorCaption": ""
