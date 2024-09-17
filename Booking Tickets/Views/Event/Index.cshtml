@@ -38,9 +38,8 @@
 }
 else
 {
-    <style>
+        <style>
       
-
         /* Match Card */
         .custom-match-card {
             font-family: Arial, sans-serif;
@@ -209,7 +208,7 @@ else
             .horizontal-hero-image img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+               @*  object-fit: cover; *@
             }
 
         /* Content Section */
@@ -262,13 +261,13 @@ else
                 <div class="custom-match-card">
                     <div class="custom-team-info">
                         <div class="custom-team-logo">
-                            <img src="~/assets/event/stadium.png" alt="Egypt Logo">
-                            <span>@item.Team1</span>
+                            <img src="~/Uploaded Images/Events/@item.FirstTeamImage" alt="Egypt Logo">
+                            <span>@item.FirstTeamName</span>
                         </div>
                         <span>vs</span>
                         <div class="custom-team-logo">
-                            <img src="~/assets/event/stadium (2).png" alt="Cape Verde Logo">
-                            <span>@item.Team2</span>
+                            <img src="~/Uploaded Images/Events/@item.SecondTeamImage" alt="Cape Verde Logo">
+                            <span>@item.SecondTeamName</span>
                         </div>
                     </div>
 
@@ -304,83 +303,71 @@ else
                         </div>
 
                           <!-- Modal -->
-          <div class="modal fade" id="eventDetailsModal" tabindex="-1" aria-labelledby="eventDetailsLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered modal-lg">
-                  <div class="modal-content">
-                      <div class="modal-header">
-                          <h5 class="modal-title" id="eventDetailsLabel">@item.Name</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body text-center">
-                          <!-- Team Logos -->
-                          <div class="row">
-                              <div class="col">
-                                  <img src="@item.TeamImage1" alt="Team 1" class="img-fluid mb-3" style="width: 100px; height: 100px;">
-                                  <h6>@item.Team1</h6>
-                              </div>
-                              <div class="col">
-                                  <img src="@item.TeamImage2" alt="Team 2" class="img-fluid mb-3" style="width: 100px; height: 100px;">
-                                  <h6>@item.Team2</h6>
+                      <div class="modal fade" id="eventDetailsModal" tabindex="-1" aria-labelledby="eventDetailsLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered modal-lg">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <h5 class="modal-title" id="eventDetailsLabel">@item.Name</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body text-center">
+                                      <!-- Team Logos -->
+                                      <div class="row">
+                                          <div class="col">
+                                              <img src="@item.FirstTeamImage" alt="Team 1" class="img-fluid mb-3" style="width: 100px; height: 100px;">
+                                              <h6>@item.FirstTeamName</h6>
+                                          </div>
+                                          <div class="col">
+                                              <img src="@item.SecondTeamImage" alt="Team 2" class="img-fluid mb-3" style="width: 100px; height: 100px;">
+                                              <h6>@item.SecondTeamName</h6>
+                                          </div>
+                                      </div>
+
+                                      <!-- Stadium and Event Date Information -->
+                                      <h6><strong>Stadium:</strong> @item.Venue.Name</h6>
+                                      <h6><strong>Date:</strong> @item.Date.ToString("MMMM dd, yyyy")</h6>
+                                      @* <h6><strong>Time:</strong> @item.Time.ToString("hh:mm tt")</h6> *@
+
+                                      <!-- Ticket Price and Types -->
+                          <form method="post" action="/Cart/AddToCart">
+                            <input type="hidden" name="EventId" value="@item.ID" />
+
+                            <div class="row mt-4">
+                                @foreach (var it in item.Tickets){
+                                <div class="row mb-3">
+                                    <!-- Ticket Type Column -->
+                                    <div class="col-4 d-flex align-items-center">
+                                        <label for="ticketQty_@it.TicketType">@it.TicketType</label>
+                                    </div>
+                                    <!-- Dropdown Column -->
+                                    <div class="col-4">
+                                        <select class="form-control form-control-sm" name="TicketQty_@it.TicketType" id="ticketQty_@it.TicketType">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                    <!-- Price Column -->
+                                    <div class="col-4 d-flex align-items-center">
+                                        <p class="mb-0">Price: EGP @it.Price</p>
+                                    </div>
+                                </div>
+                               }
+                            </div>
+
+                            <div class="modal-footer d-flex justify-content-between">
+                                <button type="submit" class="btn btn-primary">Add to Cart</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+
+                                  </div>
+                    
                               </div>
                           </div>
-
-                          <!-- Stadium and Event Date Information -->
-                          <h6><strong>Stadium:</strong> @item.Venue.Name</h6>
-                          <h6><strong>Date:</strong> @item.Date.ToString("MMMM dd, yyyy")</h6>
-                          @* <h6><strong>Time:</strong> @item.Time.ToString("hh:mm tt")</h6> *@
-
-                          <!-- Ticket Price and Types -->
-                          <form method="post" action="/Cart/AddToCart">
-                              <input type="hidden" name="EventId" value="@item.ID" />
-
-                              <div class="row mt-4">
-                                  <div class="col">
-                                      <label for="thirdClassQty">Third Class - Right Side</label>
-                                      <select class="form-control" name="ThirdClassQty" id="thirdClassQty">
-                                          <option value="0">0</option>
-                                          <option value="1">1</option>
-                                          <option value="2">2</option>
-                                          <option value="3">3</option>
-                                      </select>
-                                      <p>Price: EGP200.00</p>
-                                  </div>
-                                  <div class="col">
-                                      <label for="firstClassQty">First Class - Right Side</label>
-                                      <select class="form-control" name="FirstClassQty" id="firstClassQty">
-                                          <option value="0">0</option>
-                                          <option value="1">1</option>
-                                          <option value="2">2</option>
-                                          <option value="3">3</option>
-                                      </select>
-                                      <p>Price: EGP2000.00</p>
-                                  </div>
-                                  <div class="col">
-                                      <label for="exclusiveBoxQty">Exclusive Box</label>
-                                      <select class="form-control" name="ExclusiveBoxQty" id="exclusiveBoxQty">
-                                          <option value="0">0</option>
-                                          <option value="1">1</option>
-                                          <option value="2">2</option>
-                                          <option value="3">3</option>
-                                      </select>
-                                      <p>Price: EGP5000.00</p>
-                                  </div>
-                              </div>
-
-                              <div class="modal-footer">
-                                  <button type="submit" class="btn btn-primary">Add to Cart</button>
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              </div>
-                          </form>
                       </div>
-                    
-                  </div>
-              </div>
-          </div>
           }
-                </div>
-
-                <div class="custom-view-more">
-                    <button>View More</button>
                 </div>
 
             }
@@ -388,7 +375,7 @@ else
             {
                 <div class="horizontal-hero-card">
                     <div class="horizontal-hero-image">
-                        <img src="~/assets/event/2.jpeg" alt="Event Image">
+                        <img src="~/Uploaded Images/Events/@item.EventImage" alt="Event Image">
                     </div>
                     <div class="horizontal-hero-content">
                         <h1>@item.Name</h1>
@@ -397,13 +384,15 @@ else
                          <p>Date: @item.Date.ToString("ddd dd MMM yyyy") @item.Date.ToString("hh:mm tt")</p>
                          
                         <p>Prices From: 250 EGP</p>
-                        <button>Buy Tickets</button>
+                    <a asp-action="Detail" asp-controller="Event" asp-route-id="@item.ID" class="btn btn-primary">Buy Tickets</a>
                     </div>
                 </div>
-
             }
         }
      
+         <div class="custom-view-more">
+                    <button>View More</button>
+         </div>
     </div>
 }
 

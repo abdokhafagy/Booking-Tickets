@@ -24,8 +24,8 @@
     {
         @:</div><div class="row justify-content-center">
     }
-
-    @for (int j = 0; j < category.Count(); j++)
+    
+    @for (int j = 0; j < category.Count()-(category.Count()-1); j++)
     {
         var eventItem = category.ElementAt(j);
 

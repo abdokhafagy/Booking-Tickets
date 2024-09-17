@@ -1,0 +1,116 @@
+﻿@model DetailModelView
+
+
+<!-- Banner Section -->
+<section class="banner">
+    <div class="container">
+        <img src="~/Uploaded Images/Events/@Model.EventImage" alt="Event Banner">
+    </div>
+</section>
+
+<!-- Event Details Section -->
+<section class="event-details container my-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>@Model.Name</h3>
+            <p><strong>Location:</strong> @Model.Venue</p>
+            <p><strong>Date:</strong> @Model.Date.ToString("ddd dd MMM yyyy") | <strong>Time:</strong>  @Model.Date.ToString("hh:mm tt")</p>
+            <p><strong>Organized By:</strong> @Model.OrganizedBy</p>
+        </div>
+    </div>
+</section>
+
+<!-- Ticket Pricing Section -->
+<section class="container my-4">
+    <div class="ticket-section">
+        <h4>Ticket Prices</h4>
+    </div>
+    <div class="ticket-table">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Tickets)
+                {
+                    <tr>
+                        <td> @item.TicketType</td>
+                        <td>@item.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+
+<!-- Booking Button Section -->
+<section class="container my-4 text-center">
+    <!-- Trigger Button -->
+    <div class="custom-booking-status">
+        <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eventDetailsModal">Booking Tickets</a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="eventDetailsModal" tabindex="-1" aria-labelledby="eventDetailsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventDetailsLabel">@Model.Name</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+
+                    <!-- Stadium and Event Date Information -->
+                    <h6><strong>Stadium:</strong> @Model.Venue</h6>
+                    <h6><strong>Date:</strong> @Model.Date.ToString("MMMM dd, yyyy")</h6>
+                    @* <h6><strong>Time:</strong> @item.Time.ToString("hh:mm tt")</h6> *@
+
+                    <!-- Ticket Price and Types -->
+                    <form method="post" action="/Cart/AddToCart/@Model.ID">
+                        @* <input type="hidden" name="EventId" value="@Model.ID" /> *@
+                        <div class="row mt-4">
+                            @foreach (var it in Model.Tickets)
+                            {
+                                <div class="row mb-3">
+                                    <!-- Ticket Type Column -->
+                                    <div class="col-4 d-flex align-items-center">
+                                        <label for="ticketQty_@it.TicketType">@it.TicketType</label>
+                                    </div>
+                                    <!-- Dropdown Column -->
+                                    <div class="col-4">
+                                        <select class="form-control form-control-sm" name="TicketQty_@it.TicketType" id="ticketQty_@it.TicketType">
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                    </div>
+                                    <!-- Price Column -->
+                                    <div class="col-4 d-flex align-items-center">
+                                        <p class="mb-0">Price: EGP @it.Price</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                        <div class="modal-footer d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                       
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

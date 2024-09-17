@@ -5,12 +5,28 @@
       "PackagePath": "staticwebassets\\Booking Tickets.bundle.scp.css"
     },
     {
+      "Id": "D:\\Projects\\Booking Tickets\\Booking Tickets\\wwwroot\\Uploaded Images\\Events\\357be648-c9ca-42bc-b6f6-be104de2e2ce.jpeg",
+      "PackagePath": "staticwebassets\\Uploaded Images\\Events\\357be648-c9ca-42bc-b6f6-be104de2e2ce.jpeg"
+    },
+    {
+      "Id": "D:\\Projects\\Booking Tickets\\Booking Tickets\\wwwroot\\Uploaded Images\\Events\\89a78d38-d57c-4924-bbce-353267f3930e.jfif",
+      "PackagePath": "staticwebassets\\Uploaded Images\\Events\\89a78d38-d57c-4924-bbce-353267f3930e.jfif"
+    },
+    {
+      "Id": "D:\\Projects\\Booking Tickets\\Booking Tickets\\wwwroot\\Uploaded Images\\Events\\b17dc523-a526-42a0-96de-0fec3b4e1ae4.png",
+      "PackagePath": "staticwebassets\\Uploaded Images\\Events\\b17dc523-a526-42a0-96de-0fec3b4e1ae4.png"
+    },
+    {
       "Id": "D:\\Projects\\Booking Tickets\\Booking Tickets\\wwwroot\\assets\\Loginimages\\signin-image.jpg",
       "PackagePath": "staticwebassets\\assets\\Loginimages\\signin-image.jpg"
     },
     {
       "Id": "D:\\Projects\\Booking Tickets\\Booking Tickets\\wwwroot\\assets\\Loginimages\\signup-image.jpg",
       "PackagePath": "staticwebassets\\assets\\Loginimages\\signup-image.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\Booking Tickets\\Booking Tickets\\wwwroot\\assets\\audience.jpg",
+      "PackagePath": "staticwebassets\\assets\\audience.jpg"
     },
     {
       "Id": "D:\\Projects\\Booking Tickets\\Booking Tickets\\wwwroot\\assets\\event\\2.jpeg",

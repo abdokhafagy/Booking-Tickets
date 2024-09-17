@@ -1,6 +1,11 @@
-﻿@model Event
+﻿@model UpdateEventModelView
 
-<form method="post" asp-action="Update" asp-controller="Event" asp-route-id="@Model.ID">
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow p-4">
+                <h2 class="text-center mb-4">Update Event</h2>
+ <form method="post" asp-action="Update" asp-controller="Event" asp-route-id="@Model.ID" enctype="multipart/form-data">
     <div asp-validation-summary="All" class="text-danger mb-2"></div>
 
     <div class="form-group">
@@ -25,32 +30,32 @@
 
     <div id="EventImageField" class="form-group">
         <label asp-for="EventImage">Event Image</label>
-        <input class="form-control" asp-for="EventImage" value="@Model.EventImage">
+        <input type="file" class="form-control" asp-for="EventImage" value="@Model.EventImage">
         <span asp-validation-for="EventImage" class="text-danger"></span>
     </div>
 
     <div id="team1Field" class="form-group">
-        <label asp-for="Team1">Team1</label>
-        <input class="form-control" asp-for="Team1" value="@Model.Team1">
-        <span asp-validation-for="Team1" class="text-danger"></span>
+        <label asp-for="FirstTeamName">First Team Name</label>
+        <input class="form-control" asp-for="FirstTeamName" value="@Model.FirstTeamName">
+        <span asp-validation-for="FirstTeamName" class="text-danger"></span>
     </div>
 
     <div id="teamImage1Field" class="form-group">
-        <label asp-for="TeamImage1">TeamImage1</label>
-        <input class="form-control" asp-for="TeamImage1" value="@Model.TeamImage1">
-        <span asp-validation-for="TeamImage1" class="text-danger"></span>
+        <label asp-for="FirstTeamImage">First Team Image</label>
+        <input type="file" class="form-control" asp-for="FirstTeamImage" value="@Model.FirstTeamImage">
+        <span asp-validation-for="FirstTeamImage" class="text-danger"></span>
     </div>
 
     <div id="team2Field" class="form-group">
-        <label asp-for="Team2">Team2</label>
-        <input class="form-control" asp-for="Team2" value="@Model.Team2">
-        <span asp-validation-for="Team2" class="text-danger"></span>
+        <label asp-for="SecondTeamName">Second Team Name</label>
+        <input class="form-control" asp-for="SecondTeamName" value="@Model.SecondTeamName">
+        <span asp-validation-for="SecondTeamName" class="text-danger"></span>
     </div>
 
     <div id="teamImage2Field" class="form-group">
-        <label asp-for="TeamImage2">TeamImage2</label>
-        <input class="form-control" asp-for="TeamImage2" value="@Model.TeamImage2">
-        <span asp-validation-for="TeamImage2" class="text-danger"></span>
+        <label asp-for="SecondTeamImage">Second Team Image</label>
+        <input type="file" class="form-control" asp-for="SecondTeamImage" value="@Model.SecondTeamImage">
+        <span asp-validation-for="SecondTeamImage" class="text-danger"></span>
     </div>
 
     <div class="form-group">
@@ -78,8 +83,19 @@
         <span asp-validation-for="VenueID" class="text-danger"></span>
     </div>
 
+    <div class="form-group">
+        <label asp-for="OrganizedBy">Organized By</label>
+        <input class="form-control" asp-for="OrganizedBy" value="@Model.OrganizedBy">
+        <span asp-validation-for="OrganizedBy" class="text-danger"></span>
+    </div>
+
     <button type="submit" class="btn btn-primary mt-2">Submit</button>
 </form>
+
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     function toggleFields() {

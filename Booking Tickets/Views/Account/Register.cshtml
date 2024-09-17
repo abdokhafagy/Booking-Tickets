@@ -43,7 +43,6 @@
             <div class="signup-form">
                 <h2 class="form-title">Sign up</h2>
                 <form asp-action="Register" asp-controller="Account" method="post" class="register-form" id="register-form">
-                    <div asp-validation-summary="All" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Username" for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                         <input asp-for="Username" type="text"  id="name" placeholder="Your Username" />
@@ -57,14 +56,14 @@
                     </div>
                    
                     <div class="form-group">
-                        <label asp-for="Password" for="pass"><i class="zmdi zmdi-lock"></i></label>
-                        <input type="password"  id="pass" placeholder="Password" />
-                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <label asp-for="Phone" for="Phone"><i class="zmdi zmdi-lock"></i></label>
+                        <input asp-for="Phone" type="Phone" id="Phone" placeholder="Your Phone" />
+                        <span asp-validation-for="Phone" class="text-danger"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                        <input type="password"  id="re_pass" placeholder="Repeat your password" />
+                        <label asp-for="Password" for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                        <input asp-for="Password" type="password" id="re_pass" placeholder="Your password" />
                         <span asp-validation-for="Password" class="text-danger"></span>
                     </div>
 

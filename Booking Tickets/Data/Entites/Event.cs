@@ -8,10 +8,12 @@ namespace Booking_Tickets.Data.Entites
         public string? Name { get; set; } // if party or match
         public string? EventImage { get; set; } // if party
 
-        public string? Team1 { get; set; } // if match
-        public string? TeamImage1 { get; set; } // if match
-        public string? Team2 { get; set; } // if match
-        public string? TeamImage2 { get; set; } // if match
+        public string? FirstTeamName { get; set; } // if match
+        public string? FirstTeamImage { get; set; } // if match
+        public string? SecondTeamName { get; set; } // if match
+        public string? SecondTeamImage { get; set; } // if match
+
+        public string OrganizedBy { get; set; }
 
         public EventType Type { get; set; }
         public string? Description { get; set; }

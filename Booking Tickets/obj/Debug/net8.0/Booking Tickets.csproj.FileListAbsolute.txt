@@ -1,3 +1,12 @@
+D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.csproj.AssemblyReference.cache
+D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.AssemblyInfoInputs.cache
+D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.AssemblyInfo.cs
+D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.csproj.CoreCompileInputs.cache
+D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.RazorAssemblyInfo.cache
+D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.RazorAssemblyInfo.cs
+D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.sourcelink.json
 D:\Projects\Booking Tickets\Booking Tickets\bin\Debug\net8.0\appsettings.Development.json
 D:\Projects\Booking Tickets\Booking Tickets\bin\Debug\net8.0\appsettings.json
 D:\Projects\Booking Tickets\Booking Tickets\bin\Debug\net8.0\Booking Tickets.staticwebassets.runtime.json
@@ -226,14 +235,6 @@ D:\Projects\Booking Tickets\Booking Tickets\bin\Debug\net8.0\runtimes\win\lib\ne
 D:\Projects\Booking Tickets\Booking Tickets\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\Projects\Booking Tickets\Booking Tickets\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\Projects\Booking Tickets\Booking Tickets\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
-D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.csproj.AssemblyReference.cache
-D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.GeneratedMSBuildEditorConfig.editorconfig
-D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.AssemblyInfoInputs.cache
-D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.AssemblyInfo.cs
-D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.csproj.CoreCompileInputs.cache
-D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.MvcApplicationPartsAssemblyInfo.cache
-D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.RazorAssemblyInfo.cache
-D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.RazorAssemblyInfo.cs
 D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\staticwebassets.build.json
 D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\staticwebassets.development.json
 D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\staticwebassets\msbuild.Booking Tickets.Microsoft.AspNetCore.StaticWebAssets.props
@@ -250,4 +251,3 @@ D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\refint\Booking Tick
 D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.pdb
 D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.genruntimeconfig.cache
 D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\ref\Booking Tickets.dll
-D:\Projects\Booking Tickets\Booking Tickets\obj\Debug\net8.0\Booking Tickets.sourcelink.json
